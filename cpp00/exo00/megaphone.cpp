@@ -6,25 +6,18 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 12:55:21 by madamou           #+#    #+#             */
-/*   Updated: 2024/09/29 13:22:30 by madamou          ###   ########.fr       */
+/*   Updated: 2024/09/29 18:12:00 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cctype>
 #include <iostream>
 
-void change_argv (char **argv) {
-	int index;
-	int i;
-
-	index = 1;
-	while (argv[index]) {
-		i = 0;
-		while (argv[index][i]) {
-			if (argv[index][i] >= 'a' && argv[index][i] <= 'z')
-				argv[index][i] -= 32;
-			i++;
+void toupper_argv(char **argv) {
+	for (int index = 1; argv[index]; index++) {
+		for (int i = 0; argv[index][i]; i++) {
+			argv[index][i] = std::toupper(argv[index][i]);
 		}
-		index++;
 	}
 }
 
@@ -36,7 +29,7 @@ int main(int argc, char **argv)
 	if (argc == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	} else {
-		change_argv(argv);
+		toupper_argv(argv);
 		while (argv[index]) {
 			std::cout << argv[index];
 			index++;
