@@ -6,9 +6,11 @@
 #    By: madamou <madamou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:42:35 by madamou           #+#    #+#              #
-#    Updated: 2024/10/01 00:19:17 by madamou          ###   ########.fr        #
+#    Updated: 2024/10/01 00:55:03 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 BLACK=	$(shell tput -Txterm setaf 0)
 RED= 	$(shell tput -Txterm setaf 1)
@@ -17,13 +19,13 @@ WHITE= 	$(shell tput -Txterm setaf 7)
 YELLOW=	$(shell tput -Txterm setaf 3)
 BLUE=	$(shell tput -Txterm setaf 6)
 PURPLE=	$(shell tput -Txterm setaf 5)
-END= 	$(shell tput -Txterm sgr0)
+BYE= 	$(shell tput -Txterm sgr0)
 
 CC = c++
 
 C_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS = main.cpp file.cpp
 
 SRCS_DIR = .
 
@@ -35,10 +37,10 @@ OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 
 DIR_DUP     = mkdir -p $(@D)
 
-NAME = weapon
+NAME = sed
 
 G				= $(BLUE)
-X 				= $(END)
+X 				= $(BYE)
 BAR_SIZE		= 50
 
 TOTAL_FILES		:= $(words $(SRCS))
@@ -49,7 +51,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	@$(CC) $(C_FLAGS) $^ -o $@
 	@echo
-	@echo "✅$(BLUE)executable created >_$(END)✅"
+	@echo "✅$(BLUE)executable created >_$(BYE)✅"
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp
 	@$(DIR_DUP)
@@ -71,11 +73,11 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp
 
 clean:
 	@rm -rf $(OBJS_DIR)
-	@echo "🧼🧼$(PURPLE)objects cleaned$(END)🧼🧼"
+	@echo "🧼🧼$(PURPLE)objects cleaned$(BYE)🧼🧼"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "🧼🧼$(PURPLE)executable cleaned$(END)🧼🧼"
+	@echo "🧼🧼$(PURPLE)executable cleaned$(BYE)🧼🧼"
 
 re: fclean all
 
