@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 23:48:55 by madamou           #+#    #+#             */
-/*   Updated: 2024/09/29 23:54:05 by madamou          ###   ########.fr       */
+/*   Updated: 2024/09/30 21:17:51 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Weapon {
 
 	public:
 		std::string getType() const;
-		void getType(std::string type);
-		Weapon();	
+		void setType(std::string type);
+		Weapon(std::string type);	
 		~Weapon();
 };
 
