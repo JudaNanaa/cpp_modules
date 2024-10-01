@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 22:40:00 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/01 00:33:35 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/01 11:13:54 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	files.copy_and_replace(argv);
+	files.close_files();
 	return 0;
 }

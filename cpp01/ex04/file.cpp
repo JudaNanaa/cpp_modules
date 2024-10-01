@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:30:37 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/01 00:58:54 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/01 11:19:25 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ File::File(void) {
 }
 
 File::~File(void) {
-	this->close_files();
+	close_files();
 }
 
 bool File::open_files(char **argv) {
@@ -29,8 +29,7 @@ bool File::open_files(char **argv) {
 		std::cerr << "Cannot open the infile !!" << std::endl;
 		return false;
 	}
-	std::string output = argv[1];
-	this->_outfile.open(output.append(".replace").c_str());
+	this->_outfile.open(std::string(argv[1]).append(".replace").c_str());
 	if (this->_outfile.fail()) {
 		std::cerr << "Cannot open the outfile !!" << std::endl;
 		return false;
@@ -65,14 +64,13 @@ void File::copy_and_replace(char **argv) {
     buf_file = this->file_to_string();
 	while (true) {
 		found = buf_file.find(argv[2]);
-		if (found != std::string::npos) {
-			tmp = buf_file.substr(found + std::strlen(argv[2]));
-			buf_file.erase(found);
-			buf_file.append(argv[3]);
-			buf_file.append(tmp);
-		} else {
+		if (found == std::string::npos) {
 			break;
 		}
+		tmp = buf_file.substr(found + std::strlen(argv[2]));
+		buf_file.erase(found);
+		buf_file.append(argv[3]);
+		buf_file.append(tmp);
 	}
     this->_outfile << buf_file;
 }
