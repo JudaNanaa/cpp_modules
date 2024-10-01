@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 00:01:33 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/01 17:33:49 by madamou          ###   ########.fr       */
+/*   Created: 2024/10/01 17:39:02 by madamou           #+#    #+#             */
+/*   Updated: 2024/10/01 17:42:00 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon) {
+Harl::Harl(void) {
 	
 }
 
-HumanA::~HumanA(void) {
+Harl::~Harl(void) {
 	
 }
 
-void HumanA::attack(void) const {
-	std::cout << this->_name << " attacks with their " 
-		<< this->_weapon.getType() << std::endl;
+void Harl::debug(void) {
+	
+}
+
+void Harl::info(void) {
+	
+}
+
+void Harl::warning(void) {
+	
+}
+
+void Harl::error(void) {
+	
+}
+
+void Harl::complain(std::string level) {
+	
 }

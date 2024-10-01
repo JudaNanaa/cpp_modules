@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 23:30:37 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/01 11:19:25 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/01 16:41:10 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,17 @@ void File::copy_and_replace(char **argv) {
     std::string tmp;
 
     buf_file = this->file_to_string();
-	while (true) {
-		found = buf_file.find(argv[2]);
-		if (found == std::string::npos) {
-			break;
+	if (std::strcmp(argv[2], argv[3]) != 0) {
+		while (true) {
+			found = buf_file.find(argv[2]);
+			if (found == std::string::npos) {
+				break;
+			}
+			tmp = buf_file.substr(found + std::strlen(argv[2]));
+			buf_file.erase(found);
+			buf_file.append(argv[3]);
+			buf_file.append(tmp);
 		}
-		tmp = buf_file.substr(found + std::strlen(argv[2]));
-		buf_file.erase(found);
-		buf_file.append(argv[3]);
-		buf_file.append(tmp);
 	}
     this->_outfile << buf_file;
 }
