@@ -6,7 +6,7 @@
 #    By: madamou <madamou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:42:35 by madamou           #+#    #+#              #
-#    Updated: 2024/10/03 03:17:15 by madamou          ###   ########.fr        #
+#    Updated: 2024/10/04 09:18:56 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CC = c++
 
 C_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp bsp.cpp Point.cpp
 
 SRCS_DIR = .
 

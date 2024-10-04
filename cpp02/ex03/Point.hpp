@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:13:50 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/03 19:25:19 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/04 09:24:40 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Point {
 		Point(void);
 		Point(float const x, float const y);
 		Point(Point &to_copy);
+		Point(Point const &to_copy);
 	// destructor
 		~Point(void);
 	// Operator overloading

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 04:13:16 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/03 20:01:55 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/04 09:27:22 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main( void ) {
         std::cout << "Le point fait parti du triangle !!" << std::endl;
     }
     else {
-0        std::cout << "Le point fait parti du triangle !!" << std::endl;
+        std::cout << "Le point ne fait pas parti du triangle !!" << std::endl;
     }
     return 0;
 }

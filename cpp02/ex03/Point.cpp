@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 15:13:47 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/03 18:49:20 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/04 09:24:53 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ Point::Point(float const x, float const y)
 }
 
 Point::Point(Point &to_copy)
+	: _x(to_copy._x), _y(to_copy._y) {
+	
+}
+
+Point::Point(Point const &to_copy)
 	: _x(to_copy._x), _y(to_copy._y) {
 	
 }
