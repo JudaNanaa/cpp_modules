@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 18:13:38 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 16:32:57 by madamou          ###   ########.fr       */
+/*   Created: 2024/10/03 04:13:16 by madamou           #+#    #+#             */
+/*   Updated: 2024/10/04 15:40:56 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-
-#include <iostream>
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap {
-	public:
-		// constructors
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap &to_copy);
-		// destructor
-		~ScavTrap();
-		// Operator overloading
-		ScavTrap operator=(ScavTrap &scavrap);
-		// Public functions
-		void attack(const std::string& target);
-		void guardGate(void);
-};
+int main()
+{
+    // Test avec FragTrap
+    std::cout << "--- Création de FragTrap ---" << std::endl;
+    FragTrap frag("Fraggy");
+    frag.attack("enemy");
+    frag.takeDamage(50);
+    frag.beRepaired(20);
+    frag.highFivesGuys();
+    std::cout << "--- Destruction de FragTrap ---" << std::endl;
+    return 0;
+}
 
-#endif

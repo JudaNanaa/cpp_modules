@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 18:13:38 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 16:32:57 by madamou          ###   ########.fr       */
+/*   Created: 2024/10/04 18:02:42 by madamou           #+#    #+#             */
+/*   Updated: 2024/10/04 18:28:40 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-#include <iostream>
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
+	private:
+		std::string _name;
 	public:
-		// constructors
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap &to_copy);
-		// destructor
-		~ScavTrap();
+		// Constructor
+		DiamondTrap(void);
+		DiamondTrap(std::string name);
+		DiamondTrap(DiamondTrap &to_copy);
+		// Destructor
+		~DiamondTrap(void);
 		// Operator overloading
-		ScavTrap operator=(ScavTrap &scavrap);
-		// Public functions
-		void attack(const std::string& target);
-		void guardGate(void);
+		DiamondTrap operator=(DiamondTrap DiamondTrap);
+		//Public functions
+		void whoAmI(void);
 };
 
 #endif

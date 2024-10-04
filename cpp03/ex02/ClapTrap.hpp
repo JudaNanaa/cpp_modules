@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:43:56 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 17:53:02 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/04 14:49:08 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class ClapTrap {
 		int _hit_point;
 		int _energy_point;
 		int _attack_damage;
-		// Protected Constructors
 		ClapTrap(std::string name, int hp, int ep, int ad);
 	
 	public:
