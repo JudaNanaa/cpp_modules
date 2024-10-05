@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:13:38 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 17:59:04 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/05 18:02:04 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 	public:
 		// constructors
 		ScavTrap(void);
@@ -28,8 +28,8 @@ class ScavTrap : public ClapTrap {
 		// Operator overloading
 		ScavTrap operator=(ScavTrap &scavrap);
 		// Public functions
-		void attack(const std::string& target);
 		void guardGate(void);
+		void attack(const std::string& target);
 };
 
 #endif

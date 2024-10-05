@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:57:10 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 15:27:13 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/05 17:20:43 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 	public:
 		// constructors
 		FragTrap(void);
