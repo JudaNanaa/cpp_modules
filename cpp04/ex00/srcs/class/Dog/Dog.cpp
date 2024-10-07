@@ -14,14 +14,16 @@
 
 Dog::Dog() {
 	this->type = "Dog";	
+	std::cout << "Dog default constructor has been called" << std::endl;
 }
 
 Dog::Dog(Dog &to_copy) {
 	*this = to_copy;
+	std::cout << "Dog copy constructor has been called" << std::endl;
 }
 
 Dog::~Dog() {
-	
+	std::cout << "Dog destructor has been called" << std::endl;
 }
 
 Dog Dog::operator=(Dog to_affect) {

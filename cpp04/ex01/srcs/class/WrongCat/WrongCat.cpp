@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/05 19:29:04 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/07 19:43:23 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Cat.hpp"
+#include "../includes/WrongCat.hpp"
 
-Cat::Cat() {
-	this->type = "Cat";
-	std::cout << "Cat Default constructor has been called" << std::endl;
+WrongCat::WrongCat() : WrongAnimal() {
+	this->type = "WrongCat";
+	std::cout << "WrongCat default constructor has been called" << std::endl;
 }
 
-Cat::Cat(Cat &to_copy) {
-	std::cout << "Cat Copy constructor has been called" << std::endl;
+WrongCat::WrongCat(WrongCat &to_copy) : WrongAnimal(to_copy) {
+	std::cout << "WrongCat copy constructor has been called" << std::endl;
 	*this = to_copy;
 }
 
-Cat::~Cat() {
-	std::cout << "Cat destructor has been called" << std::endl;
+WrongCat::~WrongCat() {
+	std::cout << "WrongCat destructor has been called" << std::endl;
 }
 
-Cat Cat::operator=(Cat to_affect) {
+WrongCat WrongCat::operator=(WrongCat to_affect) {
 	this->type = to_affect.type;
 	return *this;
 }
 
-void Cat::makeSound(void) const {
+void WrongCat::makeSound(void) const {
 	std::cout << "The " << this->type << " make sound" << std::endl;
 }

@@ -13,15 +13,17 @@
 #include "../includes/WrongCat.hpp"
 
 WrongCat::WrongCat() {
-	this->type = "WrongCat";	
+	this->type = "WrongCat";
+	std::cout << "WrongCat default constructor has been called" << std::endl;
 }
 
 WrongCat::WrongCat(WrongCat &to_copy) {
+	std::cout << "WrongCat copy constructor has been called" << std::endl;
 	*this = to_copy;
 }
 
 WrongCat::~WrongCat() {
-	
+	std::cout << "WrongCat destructor has been called" << std::endl;
 }
 
 WrongCat WrongCat::operator=(WrongCat to_affect) {
