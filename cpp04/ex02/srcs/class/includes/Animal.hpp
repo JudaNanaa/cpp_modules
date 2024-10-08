@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 16:28:25 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 18:12:05 by madamou          ###   ########.fr       */
+/*   Created: 2024/10/05 18:23:16 by madamou           #+#    #+#             */
+/*   Updated: 2024/10/08 20:32:16 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_HPP
-# define INCLUDES_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-# include <iostream>
-#include "../Contact/Contact.hpp"
-#include "../PhoneBook/PhoneBook.hpp"
+#include <iostream>
+
+class Animal {
+	protected:
+		std::string type;
+		Animal();
+		Animal(Animal &to_copy);
+		
+		
+	public:
+
+		virtual ~Animal() = 0;
+		// virtual Animal &operator=(Animal to_affect);
+		
+		virtual void makeSound(void) const = 0;
+		virtual std::string getType(void) const;
+};
 
 #endif

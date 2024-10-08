@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 20:41:04 by madamou           #+#    #+#             */
-/*   Updated: 2024/09/29 22:31:55 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/08 18:15:37 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ Account::Account( int initial_deposit ) : _amount(initial_deposit){
 	this->_accountIndex = Account::_nbAccounts;
 	Account::_nbAccounts += 1;
 	Account::_totalAmount += initial_deposit;
-	std::cout << "[19920104_091532] index:"
+	Account::_displayTimestamp();
+	std::cout << "index:"
 		<< this->_accountIndex << ";amount:"
 		<< initial_deposit << ";created" << std::endl;
 }
 
 Account::~Account( void ) {
-	std::cout << "[19920104_091532] index:"
+	Account::_displayTimestamp();
+	std::cout << "index:"
 		<< this->_accountIndex << ";amount:"
 		<< this->_amount << ";closed" << std::endl;
 }

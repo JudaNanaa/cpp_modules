@@ -6,9 +6,11 @@
 #    By: madamou <madamou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:42:35 by madamou           #+#    #+#              #
-#    Updated: 2024/10/08 18:12:31 by madamou          ###   ########.fr        #
+#    Updated: 2024/10/05 19:48:33 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 BLACK=	$(shell tput -Txterm setaf 0)
 RED= 	$(shell tput -Txterm setaf 1)
@@ -21,15 +23,25 @@ END= 	$(shell tput -Txterm sgr0)
 
 CC = c++
 
-C_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+C_FLAGS = -Wall -Werror -Wextra -std=c++98 -Wshadow -Wno-shadow -g3 
 
-CONTACT = $(addprefix Contact/, Contact.cpp)
+WRONGANIMAL = $(addprefix WrongAnimal/, WrongAnimal.cpp)
 
-PHONEBOOK = $(addprefix PhoneBook/, PhoneBook.cpp add_contact.cpp search_contact.cpp)
+WRONGCAT = $(addprefix WrongCat/, WrongCat.cpp)
 
-SRCS = main.cpp $(CONTACT) $(PHONEBOOK)
+ANIMAL = $(addprefix Animal/, Animal.cpp)
 
-SRCS_DIR = .
+DOG = $(addprefix Dog/, Dog.cpp)
+
+CAT = $(addprefix Cat/, Cat.cpp)
+
+BRAIN = $(addprefix Brain/, Brain.cpp)
+
+CLASS = $(addprefix class/, $(ANIMAL) $(DOG) $(CAT) $(WRONGANIMAL) $(WRONGCAT) $(BRAIN))
+
+SRCS = main.cpp $(CLASS)
+
+SRCS_DIR = srcs/
 
 OBJS_DIR = .objets/
 
@@ -39,7 +51,7 @@ OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 
 DIR_DUP     = mkdir -p $(@D)
 
-NAME = phonebook
+NAME =  animal
 
 G				= $(BLUE)
 X 				= $(END)

@@ -6,14 +6,14 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:25:49 by madamou           #+#    #+#             */
-/*   Updated: 2024/09/29 18:54:43 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/08 18:14:26 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "../contact/contact.hpp"
+# include "../Contact/Contact.hpp"
 
 class PhoneBook {
 	private:
@@ -26,12 +26,12 @@ class PhoneBook {
 		void addPhoneNumber();
 		void addDarkestSecret();
 		void printRepertoire();
+		void incrementWrite();
 	public:
 		PhoneBook();
 		~PhoneBook();
 		void addContact();
 		void initPhoneBook();
-		void incrementWrite();
 		void searchContact();
 };
 

@@ -6,11 +6,12 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:10:23 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 17:50:25 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/08 20:29:03 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/include.hpp"
+#include "class/includes/Animal.hpp"
 
 int main()
 {
