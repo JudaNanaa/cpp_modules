@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 21:02:07 by madamou           #+#    #+#             */
-/*   Updated: 2024/09/30 21:15:14 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/14 20:48:33 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Weapon::~Weapon(void) {
 	
 }
 		
-std::string Weapon::getType() const {
+std::string const &Weapon::getType() const {
 	return (this->_type);
 }
 	

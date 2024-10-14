@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 22:41:32 by madamou           #+#    #+#             */
-/*   Updated: 2024/09/29 23:26:02 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/14 18:26:34 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Zombie {
 		~Zombie();
 };
 
-Zombie *newZombie( std::string name );
+Zombie *newZombie(std::string name);
 void randomChump(std::string name);
 
 
