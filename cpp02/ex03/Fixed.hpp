@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 04:13:18 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/03 19:02:40 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 10:26:47 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Fixed {
   private:
-    int const _bits;
+    static int const _bits = 8;
     int _value;
 
   public:
