@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:43:54 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 18:00:37 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 10:55:34 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ClapTrap::~ClapTrap(void) {
 }
 
 // Operator overloading
-ClapTrap ClapTrap::operator=(ClapTrap &claptrap) {
+ClapTrap &ClapTrap::operator=(ClapTrap &claptrap) {
 	this->_attack_damage = claptrap._attack_damage;
 	this->_name = claptrap._name;
 	this->_energy_point = claptrap._energy_point;

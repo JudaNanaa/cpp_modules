@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:57:06 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 15:34:49 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:11:54 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 #include "ClapTrap.hpp"
 
 // constructors
-FragTrap::FragTrap(void) {
-	FragTrap("Moussa");
+FragTrap::FragTrap(void)
+	: ClapTrap("Moussa", 100, 100, 30) {
+	std::cout << "The FragTrap Default constructor has been called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name)
 	: ClapTrap(name, 100, 100, 30) {
-	std::cout << "The FragTrap constructor has been called" << std::endl;
+	std::cout << "The FragTrap Parametric constructor has been called" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap &to_copy) {
+	std::cout << "The FragTrap Copy constructor has been called" << std::endl;
 	*this = to_copy;
 }
 
@@ -33,7 +35,8 @@ FragTrap::~FragTrap() {
 }
 
 // Operator overloading
-FragTrap FragTrap::operator=(FragTrap &FragTrap) {
+FragTrap &FragTrap::operator=(FragTrap &FragTrap) {
+	std::cout << "The FragTrap Affectation operator has been called" << std::endl;
 	this->_name = FragTrap._name;
 	this->_hit_point = FragTrap._hit_point;
 	this->_energy_point = FragTrap._energy_point;

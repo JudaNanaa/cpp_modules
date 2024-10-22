@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:57:10 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 15:27:13 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:05:40 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class FragTrap : public ClapTrap {
 		// destructor
 		~FragTrap();
 		// Operator overloading
-		FragTrap operator=(FragTrap &scavrap);
+		FragTrap &operator=(FragTrap &scavrap);
 		// Public functions
 		void highFivesGuys(void);		
 };

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:02:42 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/05 17:55:59 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:11:22 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 		// Destructor
 		~DiamondTrap(void);
 		// Operator overloading
-		DiamondTrap operator=(DiamondTrap DiamondTrap);
+		DiamondTrap &operator=(DiamondTrap DiamondTrap);
 		//Public functions
 		using ScavTrap::attack;
 		void whoAmI(void);

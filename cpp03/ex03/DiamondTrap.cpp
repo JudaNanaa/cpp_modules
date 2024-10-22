@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 18:03:00 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/05 18:04:56 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:12:59 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ DiamondTrap::~DiamondTrap(void) {
 }
 
 // Operator overloading
-DiamondTrap DiamondTrap::operator=(DiamondTrap DiamondTrap) {
+DiamondTrap &DiamondTrap::operator=(DiamondTrap DiamondTrap) {
+	std::cout << "DiamondTrap Affectation operator has been called" << std::endl;
 	this->_name = DiamondTrap._name;
 	this->_hit_point = DiamondTrap._hit_point;
 	this->_energy_point = DiamondTrap._energy_point;

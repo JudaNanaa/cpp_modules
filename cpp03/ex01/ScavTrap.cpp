@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 18:14:25 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/04 18:00:54 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:04:28 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 #include "ClapTrap.hpp"
 
 // constructors
-ScavTrap::ScavTrap(void) {
-	ScavTrap("Moussa");
+ScavTrap::ScavTrap(void) : ClapTrap("Moussa", 100, 50, 20) {
+	std::cout << "ScavTrap default constructor has been called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
 	: ClapTrap(name, 100, 50, 20) {
-	// this->_name = name;
-	// this->_hit_point = 100;
-	// this->_energy_point = 50;
-	// this->_attack_damage = 20;
+	std::cout << "ScavTrap Parametric constructor has been called" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap &to_copy) {
+	std::cout << "ScavTrap Copy constructor has been called" << std::endl;
 	*this = to_copy;
 }
 
 // destructor
 ScavTrap::~ScavTrap() {
-	
+	std::cout << "ScavTrap Destructor has been called" << std::endl;
 }
 
 // Operator overloading
-ScavTrap ScavTrap::operator=(ScavTrap &scavtrap) {
+ScavTrap &ScavTrap::operator=(ScavTrap &scavtrap) {
+	std::cout << "ScavTrap Affectation operator has been called" << std::endl;
 	this->_name = scavtrap._name;
 	this->_hit_point = scavtrap._hit_point;
 	this->_energy_point = scavtrap._energy_point;
