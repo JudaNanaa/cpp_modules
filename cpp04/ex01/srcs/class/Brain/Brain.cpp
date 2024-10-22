@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 19:35:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 17:48:19 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:52:06 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,25 @@ Brain::Brain(Brain &to_copy) {
 }
 
 Brain::~Brain(void) {
-	std::cout << "Brain destructor has been called" << std::endl;	
+	std::cout << "Brain destructor has been called" << std::endl;
 }
         
 Brain &Brain::operator=(Brain &to_affect) {
 	for (int i = 0; i < 100; i++) {
+	std::cout << "Brain Affectation operator has been called" << std::endl;
 		this->ideas[i] = to_affect.ideas[i];
 	}
 	return *this;
 }
 
 std::string Brain::getIdeas(int i) const {
-  if (i > 99)
+  if (i < 0 || i > 99)
     return NULL;
   return ideas[i];
 }
 
 void Brain::inception(std::string idea, int i) {
-  if (i > 99)
+  if (i < 0 || i > 99)
     return ;
   this->ideas[i] = idea;
 }

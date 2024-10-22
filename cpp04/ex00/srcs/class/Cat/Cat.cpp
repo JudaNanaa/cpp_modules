@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/05 19:29:04 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:05:59 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Cat::~Cat() {
 	std::cout << "Cat destructor has been called" << std::endl;
 }
 
-Cat Cat::operator=(Cat to_affect) {
+Cat &Cat::operator=(Cat to_affect) {
+	std::cout << "Cat Affectation operator has been called" << std::endl;
 	this->type = to_affect.type;
 	return *this;
 }

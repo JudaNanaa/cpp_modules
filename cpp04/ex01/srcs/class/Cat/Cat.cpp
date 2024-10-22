@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 17:47:00 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:54:35 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Cat::~Cat() {
 }
 
 Cat &Cat::operator=(Cat const &to_affect) {
+	std::cout << "Cat Affectation operator has been called" << std::endl;
 	if (this != &to_affect)
 	{
 		this->type = to_affect.type;

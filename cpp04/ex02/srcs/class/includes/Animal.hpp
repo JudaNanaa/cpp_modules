@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:23:16 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 20:32:16 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:18:40 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class Animal {
 	public:
 
 		virtual ~Animal() = 0;
-		// virtual Animal &operator=(Animal to_affect);
 		
 		virtual void makeSound(void) const = 0;
 		virtual std::string getType(void) const;

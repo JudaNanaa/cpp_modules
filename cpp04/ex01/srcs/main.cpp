@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:10:23 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 17:50:25 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:13:23 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
   std::cout << "-------------------[Mandatory tests 0]----------------------" << std::endl;
   const Animal* j = new Dog();
   const Animal* i = new Cat();
-  delete j;//should not create a leak
+  delete j;
   delete i;
   std::cout << "-------------------[Mandatory tests 1]----------------------" << std::endl;
   std::cout << "~~~~~~~~~~~~~~~[INIT]~~~~~~~~~~~~~~~" << std::endl;

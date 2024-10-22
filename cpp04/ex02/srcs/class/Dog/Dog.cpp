@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 18:59:21 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:19:51 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Dog::~Dog() {
 }
 
 Dog &Dog::operator=(Dog const &to_affect) {
+	std::cout << "Dog Affectation operator has been called" << std::endl;
 	if (this != &to_affect)
 	{
 		this->type = to_affect.type;

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:34:08 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/05 19:47:30 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:05:04 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ WrongAnimal::~WrongAnimal() {
 }
 
 // Operator overloading
-WrongAnimal WrongAnimal::operator=(WrongAnimal to_affect) {
+WrongAnimal &WrongAnimal::operator=(WrongAnimal to_affect) {
+	std::cout << "WrongAnimal Affector operator has been called" << std::endl;
 	this->type = to_affect.type;
 	return *this;
 }

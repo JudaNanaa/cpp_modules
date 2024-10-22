@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:23:16 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 15:58:39 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:05:41 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class WrongAnimal {
 		WrongAnimal();
 		WrongAnimal(WrongAnimal &to_copy);
 	// Destructor
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 	// Operator overloading
-		WrongAnimal operator=(WrongAnimal to_affect);
+		WrongAnimal &operator=(WrongAnimal to_affect);
 	// Public functions
 		void makeSound(void) const;
 		virtual std::string getType(void) const;

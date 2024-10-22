@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 15:58:23 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:06:15 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ WrongCat::~WrongCat() {
 	std::cout << "WrongCat destructor has been called" << std::endl;
 }
 
-WrongCat WrongCat::operator=(WrongCat to_affect) {
+WrongCat &WrongCat::operator=(WrongCat to_affect) {
+	std::cout << "WrongCat Affectation operator has been called" << std::endl;
 	this->type = to_affect.type;
 	return *this;
 }

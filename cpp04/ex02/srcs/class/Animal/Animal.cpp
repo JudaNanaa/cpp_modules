@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:34:08 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 20:32:12 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:18:36 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,6 @@ Animal::Animal(Animal &to_copy) {
 Animal::~Animal() {
 	std::cout << "Animal destructor has been called" << std::endl;
 }
-
-//Operator overloading
-// Animal &Animal::operator=(Animal to_affect) {
-// 	this->type = to_affect.type;
-// 	return *this;
-// }
-
 
 // Public Functions
 void Animal::makeSound(void) const {

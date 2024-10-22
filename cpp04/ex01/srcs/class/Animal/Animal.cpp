@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:34:08 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 17:38:33 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 11:50:40 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // Constructor
 Animal::Animal(void) {
-	this->type = "NoType";
+	this->type = "Animal";
 	std::cout << "Animal default constructor has been called" << std::endl;
 }
 
@@ -31,6 +31,7 @@ Animal::~Animal() {
 
 // Operator overloading
 Animal &Animal::operator=(Animal to_affect) {
+	std::cout << "Animal Affectation operator has been called" << std::endl;
 	this->type = to_affect.type;
 	return *this;
 }

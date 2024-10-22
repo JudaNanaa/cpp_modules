@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 19:35:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 17:48:19 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/22 12:19:22 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ Brain::Brain(Brain &to_copy) {
 }
 
 Brain::~Brain(void) {
-	std::cout << "Brain destructor has been called" << std::endl;	
+	std::cout << "Brain destructor has been called" << std::endl;
 }
         
 Brain &Brain::operator=(Brain &to_affect) {
+	std::cout << "Brain Affectation operator has been called" << std::endl;
 	for (int i = 0; i < 100; i++) {
 		this->ideas[i] = to_affect.ideas[i];
 	}
