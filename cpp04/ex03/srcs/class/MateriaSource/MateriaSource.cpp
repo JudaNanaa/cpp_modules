@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 22:55:48 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 14:44:16 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:27:57 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &to_affect) {
 void MateriaSource::clearStorage(void) {
 	int i = 0;
 
-    while (i < this->items) {
+    while (i < STORE) {
         if (this->_storage[i] != NULL) {
             delete this->_storage[i];
             this->_storage[i] = NULL;
@@ -55,7 +55,7 @@ void MateriaSource::copyStorage(MateriaSource const &to_copy) {
 	int i;
 
 	i = 0;
-	while (i < this->items) {
+	while (i < STORE) {
 		if (to_copy._storage[i] == NULL) {
 			this->_storage[i] = NULL;
 		}
@@ -70,7 +70,7 @@ void MateriaSource::initializeStoarge(void) {
 	int i;
 
 	i = 0;
-	while (i < this->items) {
+	while (i < STORE) {
 		this->_storage[i] = NULL;
 		i++;
 	}
@@ -79,7 +79,7 @@ void MateriaSource::initializeStoarge(void) {
 void MateriaSource::learnMateria(AMateria* to_stock) {
 	int i = 0;
 
-	while (i < this->items) {
+	while (i < STORE) {
 		if (this->_storage[i] == NULL) {
 			this->_storage[i] = to_stock->clone();
 			std::cout << "Learn a new Materia -> " << this->_storage[i]->getType() << std::endl;
@@ -93,7 +93,7 @@ void MateriaSource::learnMateria(AMateria* to_stock) {
 AMateria* MateriaSource::createMateria(std::string const & type) {
 	int i = 0;
 	
-	while (i < this->items) {
+	while (i < STORE) {
 		if (this->_storage[i] != NULL) {
 			if (this->_storage[i]->getType() == type) {
 				std::cout << "createMateria create a Materia with type " << type << std::endl;

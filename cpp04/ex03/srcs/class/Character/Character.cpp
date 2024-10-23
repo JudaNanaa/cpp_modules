@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 22:22:04 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 14:36:22 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:26:19 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Character::copyInventory(Character const &to_copy) {
 	int i;
 
 	i = 0;
-	while (i < this->items)
+	while (i < ITEMS)
 	{
 		if (to_copy._inventory[i] == NULL) {
 			this->_inventory[i] = NULL;
@@ -67,7 +67,7 @@ void Character::initializeInventory(void) {
 	int i;
 
 	i = 0;
-	while (i < this->items)
+	while (i < ITEMS)
 	{
 		this->_inventory[i] = NULL;
 		i++;
@@ -75,7 +75,7 @@ void Character::initializeInventory(void) {
 }
 
 void Character::clearInventory() {
-    for (int i = 0; i < this->items; i++) {
+    for (int i = 0; i < ITEMS; i++) {
         if (this->_inventory[i] != NULL) {
             delete this->_inventory[i];
             this->_inventory[i] = NULL;
@@ -90,7 +90,7 @@ std::string const & Character::getName() const {
 void Character::equip(AMateria* m) {
 	int i = 0;
 
-	while (i < this->items) {
+	while (i < ITEMS) {
 		if (this->_inventory[i] == NULL) {
 			this->_inventory[i] = m;
 			std::cout << this->_name << "get a new item -> " << m->getType() << std::endl;
@@ -102,7 +102,7 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (idx < 0 || idx >= this->items) {
+	if (idx < 0 || idx >= ITEMS) {
 		std::cout << "Can't unequip beacuse idx not good" << std::endl;
 		return;
 	}
@@ -115,7 +115,7 @@ void Character::unequip(int idx) {
 }
 
 void Character::use(int idx, ICharacter& target) {
-	if (idx < 0 || idx >= this->items || this->_inventory[idx] == NULL) {
+	if (idx < 0 || idx >= ITEMS || this->_inventory[idx] == NULL) {
 		std::cout << "Can't use beacuse idx not good" << std::endl;
 		return;
 	}

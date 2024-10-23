@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 12:19:51 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:22:11 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog() : Animal() {
 	std::cout << "Dog default constructor has been called" << std::endl;
 }
 
-Dog::Dog(Dog &to_copy) : Animal() {
+Dog::Dog(Dog const &to_copy) : Animal() {
 	*this = to_copy;
 	std::cout << "Dog copy constructor has been called" << std::endl;
 }

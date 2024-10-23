@@ -10,9 +10,9 @@ class Brain {
     public:
         Brain(void);
         ~Brain(void);
-        Brain(Brain &to_copy);
+        Brain(Brain const &to_copy);
         
-        Brain   &operator=(Brain &to_affect);
+        Brain   &operator=(Brain const &to_affect);
         std::string getIdeas(int i) const;
         void inception(std::string idea, int i);
 };

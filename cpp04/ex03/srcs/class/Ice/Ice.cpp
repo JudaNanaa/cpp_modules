@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 22:45:43 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 14:39:11 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:28:30 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Ice::~Ice() {
 }
 
 // Operator overloading
-Ice &Ice::operator=(Ice &to_affect) {
+Ice &Ice::operator=(Ice  const &to_affect) {
 	std::cout << "Cure Affectation operation has been called" << std::endl;
 	if (this != &to_affect) {
 		this->_type  = to_affect._type;

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 22:49:16 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/21 23:50:27 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:27:44 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
+# define STORE 4
+
 class MateriaSource : public IMateriaSource
 {
 	private:
-		static const int items = 4;
-		AMateria *_storage[4];
+		AMateria *_storage[STORE];
 		void initializeStoarge(void);
 		void clearStorage(void);
 		void copyStorage(MateriaSource const &to_copy);	

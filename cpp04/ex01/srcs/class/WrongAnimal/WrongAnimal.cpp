@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:34:08 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 12:05:04 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:13:16 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ WrongAnimal::WrongAnimal(void) {
 	std::cout << "WrongAnimal default constructor has been called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal &to_copy) {
+WrongAnimal::WrongAnimal(WrongAnimal const &to_copy) {
 	*this = to_copy;
 	std::cout << "WrongAnimal copy constructor has been called" << std::endl;
 }
@@ -30,7 +30,7 @@ WrongAnimal::~WrongAnimal() {
 }
 
 // Operator overloading
-WrongAnimal &WrongAnimal::operator=(WrongAnimal to_affect) {
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &to_affect) {
 	std::cout << "WrongAnimal Affector operator has been called" << std::endl;
 	this->type = to_affect.type;
 	return *this;

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 22:11:10 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 14:38:07 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:28:22 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cure::~Cure() {
 }
 
 // Operator overloading
-Cure &Cure::operator=(Cure &to_affect) {
+Cure &Cure::operator=(Cure const &to_affect) {
 	std::cout << "Cure Affectation operation has been called" << std::endl;
 	if (this != &to_affect) {
 		this->_type  = to_affect._type;

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:10:23 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/08 20:29:03 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:23:02 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
   for (int i = 0; i < 10; i++) {
     std::cout << "[" << i << "] ";
     if (i < 5)
-      animals[i] = new(std::nothrow) Cat();
+      animals[i] = new Cat();
     else
-      animals[i] = new(std::nothrow) Dog();
+      animals[i] = new Dog();
     if (!animals[i]) {
       for (int j = 0; j < i; j++) {delete animals[j];}
       std::cout << "Memory alloctation error" << std::endl;

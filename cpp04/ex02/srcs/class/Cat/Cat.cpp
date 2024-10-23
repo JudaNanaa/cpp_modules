@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:02 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 12:19:40 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:22:07 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat() : Animal() {
 	std::cout << "Cat Default constructor has been called" << std::endl;
 }
 
-Cat::Cat(Cat &to_copy) : Animal() {
+Cat::Cat(Cat const &to_copy) : Animal() {
 	std::cout << "Cat Copy constructor has been called" << std::endl;
 	*this = to_copy;
 }

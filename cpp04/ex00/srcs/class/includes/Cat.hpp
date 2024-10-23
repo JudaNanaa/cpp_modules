@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 18:42:17 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/22 12:05:33 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/23 10:09:41 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 class Cat : public Animal {
 	public:
 		Cat();
-		Cat(Cat &to_copy);
+		Cat(Cat const &to_copy);
 		~Cat();
-		Cat &operator=(Cat to_affect);
+		Cat &operator=(Cat const &to_affect);
 		void makeSound(void) const;
 };
 
