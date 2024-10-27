@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:14:55 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/26 18:01:38 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/27 12:47:38 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Bureaucrat {
 		int getGrade(void) const;
 		void incrementGrade(void);
 		void decrementGrade(void);
-		void signForm(Form const &form);
+		void signForm(Form &form);
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char *what() const throw() {
