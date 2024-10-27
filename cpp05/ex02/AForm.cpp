@@ -1,79 +1,79 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:39:30 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 14:10:57 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/27 14:15:33 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(int const gradeSign, int const gradeExecute)
+AForm::AForm(int const gradeSign, int const gradeExecute)
 	: _name("NoName"), _signed(false), _gradeSign(gradeSign), _gradeExecute(gradeExecute) {
 	if (gradeSign < HIGHEST_GRADE || gradeExecute < HIGHEST_GRADE) {
-		throw Form::GradeTooHighException();
+		throw AForm::NotGoodConstructorException();
 	}
 	if (gradeSign > LOWEST_GRADE || gradeExecute > LOWEST_GRADE)	
-		throw Form::GradeTooLowException();
+		throw AForm::NotGoodConstructorException();
 }
 
-Form::Form(std::string name, int const gradeSign, int const gradeExecute)
+AForm::AForm(std::string name, int const gradeSign, int const gradeExecute)
 	: _name(name), _signed(false), _gradeSign(gradeSign), _gradeExecute(gradeExecute){
 	
 }
 
-Form::Form(Form const &to_copy)
+AForm::AForm(AForm const &to_copy)
 	: _name(to_copy._name), _signed(to_copy._signed), _gradeSign(to_copy._gradeSign), _gradeExecute(to_copy._gradeExecute) {
 	*this = to_copy;
 }
 
 
-Form::~Form() {
+AForm::~AForm() {
 	
 }
 
-Form &Form::operator=(Form const &other) {
+AForm &AForm::operator=(AForm const &other) {
 	this->_signed = other._signed;
 	return *this;
 }
 
 
-std::string Form::getName(void) const {
+std::string AForm::getName(void) const {
 	return this->_name;
 }
 
-bool		Form::getSigned(void) const {
+bool		AForm::getSigned(void) const {
 	return this->_signed;
 }
 
-int			Form::getGradeSign(void) const {
+int			AForm::getGradeSign(void) const {
 	return this->_gradeSign;
 }
 
-int			Form::getGradeExecute(void) const {
+int			AForm::getGradeExecute(void) const {
 	return this->_gradeExecute;
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat) {
+void AForm::beSigned(const Bureaucrat &bureaucrat) {
     if (this->_signed) {
-        std::cout << "Form " << this->_name << " is already signed." << std::endl;
+        std::cout << "AForm " << this->_name << " is already signed." << std::endl;
         return;
     }
     if (bureaucrat.getGrade() > this->_gradeSign)
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
     this->_signed = true;
 }
 
 
-std::ostream &operator<<(std::ostream &os, const Form &form) {
-	os << "form name : " << form.getName() << std::endl
-		<< "Signed ? : " << form.getSigned() << std::endl
-		<< "Grade to signed : " << form.getGradeSign() << std::endl
-		<< "Grade to execute : " << form.getGradeExecute() << std::endl;
+std::ostream &operator<<(std::ostream &os, const AForm &Aform) {
+	os << "Aform name : " << Aform.getName() << std::endl
+		<< "Signed ? : " << Aform.getSigned() << std::endl
+		<< "Grade to signed : " << Aform.getGradeSign() << std::endl
+		<< "Grade to execute : " << Aform.getGradeExecute() << std::endl;
 	return os;
 }
