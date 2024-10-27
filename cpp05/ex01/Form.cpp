@@ -6,15 +6,20 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:39:30 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/26 18:38:50 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/27 13:26:54 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form(int const gradeSign, int const gradeExecute)
 	: _name("NoName"), _signed(false), _gradeSign(gradeSign), _gradeExecute(gradeExecute) {
-	
+	if (gradeSign < HIGHEST_GRADE || gradeExecute < HIGHEST_GRADE) {
+		throw Form::GradeTooHighException();
+	}
+	if (gradeSign > LOWEST_GRADE || gradeExecute > LOWEST_GRADE)	
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(std::string name, int const gradeSign, int const gradeExecute)
