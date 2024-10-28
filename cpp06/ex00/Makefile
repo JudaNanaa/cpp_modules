@@ -6,7 +6,7 @@
 #    By: madamou <madamou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:42:35 by madamou           #+#    #+#              #
-#    Updated: 2024/10/26 15:04:48 by madamou          ###   ########.fr        #
+#    Updated: 2024/10/28 16:53:58 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ C_FLAGS = -Wall -Werror -Wextra -std=c++98 -Wshadow -Wno-shadow -g3
 
 
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp ScalarConverter.cpp
 
 SRCS_DIR = .
 
@@ -39,7 +39,7 @@ OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 
 DIR_DUP     = mkdir -p $(@D)
 
-NAME =  bureaucrat
+NAME =  convert
 
 G				= $(BLUE)
 X 				= $(END)
