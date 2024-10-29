@@ -6,11 +6,12 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 19:28:31 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/29 22:33:42 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/29 23:37:08 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <iterator>
 
 Span::Span(unsigned int const n)
 	: _max(n) , _nb(0) {
@@ -39,6 +40,26 @@ void Span::addNumber(int const nb) {
 	}
 	this->_tab.push_back(nb);
 }
+
+
+// Définition de la fonction template
+// template <typename Iterator>
+// typename std::enable_if<std::is_same<typename std::iterator_traits<Iterator>::value_type, int>::value>::type
+// printIntegers(Iterator begin, Iterator end) {
+//     while (begin != end) {
+//         std::cout << *begin << " ";
+//         ++begin;
+//     }
+//     std::cout << std::endl;
+// }
+// template <typename Iterator>
+// typename std::enable_if<std::is_same<typename std::iterator_traits<Iterator>::value_type, int>::value, void>::type
+// Span::addRange(Iterator begin, Iterator end) {
+//     while (begin != end) {
+//         this->addNumber(*begin);
+//         ++begin;
+//     }
+// }
 
 unsigned int Span::shortestSpan() {
 	unsigned int span;
