@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 23:10:55 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/31 00:19:35 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/31 13:33:33 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ void RPN::divideTop(void) {
 	this->stack.pop();
 	first = this->stack.top();
 	this->stack.pop();
+	if (second == 0) {
+		throw RPN::ErrorException();
+	}
 	first = first / second;
 	this->stack.push(first);
 }

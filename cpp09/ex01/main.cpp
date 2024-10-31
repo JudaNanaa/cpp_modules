@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 23:10:51 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/31 00:20:46 by madamou          ###   ########.fr       */
+/*   Updated: 2024/10/31 13:29:44 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <iostream>
 
 int main(int argc, char **argv) {
-	RPN calc;
 	
 	if (argc != 2) {
-		std::cerr << "Need atguments to calculate !!" << std::endl;
+		std::cerr << "Need 2 arguments to calculate !!" << std::endl;
 		return 1;
 	}
 	try {
+		RPN calc;
 		for (int i = 0; argv[1][i]; i++) {
 			while (std::isspace(argv[1][i])) {
 				i++;
