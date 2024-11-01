@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:39:30 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 14:10:57 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 21:04:21 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Form::Form(int const gradeSign, int const gradeExecute)
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(std::string name, int const gradeSign, int const gradeExecute)
+Form::Form(std::string const name, int const gradeSign, int const gradeExecute)
 	: _name(name), _signed(false), _gradeSign(gradeSign), _gradeExecute(gradeExecute){
 	
 }
@@ -42,7 +42,6 @@ Form &Form::operator=(Form const &other) {
 	return *this;
 }
 
-
 std::string Form::getName(void) const {
 	return this->_name;
 }
@@ -59,8 +58,8 @@ int			Form::getGradeExecute(void) const {
 	return this->_gradeExecute;
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat) {
-    if (this->_signed) {
+void Form::beSigned(Bureaucrat const &bureaucrat) {
+    if (this->_signed == true) {
         std::cout << "Form " << this->_name << " is already signed." << std::endl;
         return;
     }

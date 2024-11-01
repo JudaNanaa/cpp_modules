@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:56:50 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 13:51:08 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 21:06:15 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
         
         std::cout << taxForm << std::endl;
 
-        alice.signForm(taxForm);
+        alice.signForm(taxForm); // error
         std::cout << taxForm << std::endl;
 
         alice.incrementGrade();

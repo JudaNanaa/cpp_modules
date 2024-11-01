@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:34:09 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 12:47:17 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 21:04:02 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat(int const grade) : _name("NoName") {
 	this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int const grade) : _name(name) {
+Bureaucrat::Bureaucrat(std::string const name, int const grade) : _name(name) {
 	if (grade < HIGHEST_GRADE)
 		throw GradeTooHighException(); 
 	if (grade > LOWEST_GRADE)
@@ -59,12 +59,12 @@ void Bureaucrat::incrementGrade(void) {
 }
 
 void Bureaucrat::decrementGrade(void) {
-	if (this->_grade + 1 < LOWEST_GRADE)
+	if (this->_grade + 1 > LOWEST_GRADE)
 		throw GradeTooLowException();
 	this->_grade++;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(Form &form) const {
     try {
         form.beSigned(*this);
         std::cout << this->getName() << " signed " << form.getName() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:14:55 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/26 15:02:20 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 20:59:22 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Bureaucrat {
 		int					_grade;
 	public:
 		Bureaucrat(int const grade);
-		Bureaucrat(std::string name, int const grade);
+		Bureaucrat(std::string const name, int const grade);
 		Bureaucrat(Bureaucrat const &bureacrat);
 
 		~Bureaucrat();
@@ -48,7 +48,6 @@ class Bureaucrat {
 					return ("The grade is too low !!");
 				}
 		};
-		friend std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureacrat);
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:40:47 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 16:28:58 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 21:22:54 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	: AForm(target, 72, 45) {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &RobotomyRequestForm)
-	: AForm(RobotomyRequestForm.getName(), 72, 45) {
-	this->_signed = RobotomyRequestForm._signed;
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &other)
+	: AForm(other.getName(), 72, 45) {
+	*this = other;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
@@ -31,15 +31,15 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &to_copy) {
-	this->_signed = to_copy._signed;
+	AForm::operator=(to_copy);
 	return *this;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-	if (this->_signed == false) {
+	if (this->getSigned() == false) {
 		throw AForm::FormNotSignedException();
 	}
-	if (executor.getGrade() > this->_gradeExecute) {
+	if (executor.getGrade() > this->getGradeExecute()) {
 		throw Bureaucrat::GradeTooLowException();
 	}
 	std::cout << "Some drilling noise !!" << std::endl;
