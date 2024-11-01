@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:19:18 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 16:29:02 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 21:23:27 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	: AForm(target, 145, 137) {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &ShrubberyCreationForm)
-	: AForm(ShrubberyCreationForm.getName(), 145, 137) {
-	this->_signed = ShrubberyCreationForm._signed;
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &other)
+	: AForm(other.getName(), 145, 137) {
+	*this = other;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
@@ -49,15 +49,15 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &to_copy) {
-	this->_signed = to_copy._signed;
+	AForm::operator=(to_copy);
 	return *this;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
-	if (this->_signed == false) {
+	if (this->getSigned() == false) {
 		throw AForm::FormNotSignedException();
 	}
-	if (executor.getGrade() > this->_gradeExecute) {
+	if (executor.getGrade() > this->getGradeExecute()) {
 		throw Bureaucrat::GradeTooLowException();
 	}
 	std::ofstream outfile;

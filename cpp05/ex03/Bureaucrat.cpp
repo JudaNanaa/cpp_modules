@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:34:09 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 16:30:40 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 21:20:58 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void Bureaucrat::incrementGrade(void) {
 }
 
 void Bureaucrat::decrementGrade(void) {
-	if (this->_grade + 1 < LOWEST_GRADE)
+	if (this->_grade + 1 > LOWEST_GRADE)
 		throw GradeTooLowException();
 	this->_grade++;
 }

@@ -22,7 +22,7 @@ AForm::AForm(int const gradeSign, int const gradeExecute)
 		throw AForm::NotGoodConstructorException();
 }
 
-AForm::AForm(std::string name, int const gradeSign, int const gradeExecute)
+AForm::AForm(std::string const name, int const gradeSign, int const gradeExecute)
 	: _name(name), _signed(false), _gradeSign(gradeSign), _gradeExecute(gradeExecute){
 	
 }

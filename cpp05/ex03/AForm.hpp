@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 15:39:33 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/27 17:27:39 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/01 21:32:08 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 #include <iostream>
 
 class AForm {
-	protected:
+	private:
 		const std::string	_name;
 		bool				_signed;
 		const int			_gradeSign;
 		const int			_gradeExecute;
 	public:
 		AForm(int const gradeSign, int const gradeExecute);
-		AForm(std::string name, int const gradeSign, int const gradeExecute);
+		AForm(std::string const name, int const gradeSign, int const gradeExecute);
 		AForm(AForm const &to_copy);
 		
 		virtual ~AForm();
