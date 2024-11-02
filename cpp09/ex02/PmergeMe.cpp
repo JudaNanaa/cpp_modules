@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 13:58:13 by madamou           #+#    #+#             */
-/*   Updated: 2024/11/01 20:39:54 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/02 08:34:02 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,13 @@ std::vector<int> PmergeMe::sortVector(std::vector<int> &vec) {
 	std::vector<int>::iterator end;
 	std::vector<int>::iterator it;
 
+	biggest.reserve(vec.size() / 2);
+	if (vec.size() % 2 == 1) {
+		smallest.reserve(vec.size());
+	}
+	else {
+		smallest.reserve(vec.size() / 2);
+	}
 	for (it = vec.begin(), end = vec.end(); it != end;) {
 		int first = *it;
 		++it;
