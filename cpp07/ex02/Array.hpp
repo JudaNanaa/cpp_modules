@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:08:06 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/29 17:49:03 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/02 18:42:37 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Array {
 		
 		T &operator[](unsigned int index);
 
-		unsigned int size() const;
+		unsigned int const &size() const;
 };
 
 #include "Array.tpp"

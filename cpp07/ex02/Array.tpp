@@ -24,7 +24,8 @@ Array<T>::Array(const Array &other) {
 
 template <typename T>
 Array<T> &Array<T>::operator=(const Array &other) {
-	delete[] this->_elements;
+	if (this->_elements)
+		delete[] this->_elements;
 	this->_arraySize = other._arraySize;
 	this->_elements = new T[other._arraySize];
     for (unsigned int i = 0; i < other._arraySize; i++) {
@@ -47,7 +48,7 @@ T &Array<T>::operator[](unsigned int index) {
 }
 
 template <typename T>
-unsigned int Array<T>::size() const {
+unsigned int const &Array<T>::size() const {
 	return this->_arraySize;
 }
 
