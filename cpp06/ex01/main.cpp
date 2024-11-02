@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:17:58 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/28 19:31:56 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:24:54 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Serializer.hpp"
 
 int main() {
-    Data data(42, "Example", 3.14f);
+    Data data(42, "Exampleouai", 3.14f);
     std::cout << "Original Data object:" << std::endl;
     std::cout << "ID: " << data.id << ", Name: " << data.name << ", Value: " << data.value << std::endl;
 

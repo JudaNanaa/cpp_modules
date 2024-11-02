@@ -6,7 +6,7 @@
 #    By: madamou <madamou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/29 12:42:35 by madamou           #+#    #+#              #
-#    Updated: 2024/10/28 20:17:24 by madamou          ###   ########.fr        #
+#    Updated: 2024/11/02 17:26:33 by madamou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ OBJS = $(SRCS:$(SRCS_DIR)/%.cpp=$(OBJS_DIR)/%.o)
 
 DIR_DUP     = mkdir -p $(@D)
 
-NAME =  convert
+NAME =  identify
 
 G				= $(BLUE)
 X 				= $(END)

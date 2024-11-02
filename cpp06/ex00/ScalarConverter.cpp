@@ -6,7 +6,7 @@
 /*   By: madamou <madamou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 16:46:33 by madamou           #+#    #+#             */
-/*   Updated: 2024/10/28 19:14:15 by madamou          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:22:34 by madamou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,27 @@ int ifInfinity(std::string str) {
 	return 1;
 }
 
-void ifFail(void) {
+void charImpossible (void) {
 	std::cout << "char: impossible" << std::endl;
+}
+
+void intImpossible (void) {
 	std::cout << "int: impossible" << std::endl;
+}
+
+void floatImpossible (void) {
 	std::cout << "float: impossible" << std::endl;
+}
+
+void doubleImpossible (void) {
 	std::cout << "double: impossible" << std::endl;
+}
+
+void ifFail(void) {
+	charImpossible();
+	intImpossible();
+	floatImpossible();
+	doubleImpossible();
 }
 
 void convertFloat(std::string str) {
