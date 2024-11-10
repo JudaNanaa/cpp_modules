@@ -20,6 +20,7 @@
 #include <typeinfo>
 #include <vector>
 #include <iterator>
+
 class Span {
 	private:
 		unsigned int _max;

@@ -23,13 +23,11 @@ int main() {
     vec.push_back(4);
     vec.push_back(5);
 
-    try {
-        int found = easyfind(vec, 3);
-        std::cout << "Found value in vector: " << found << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Value not found in vector" << std::endl;
-    }
-
+    std::vector<int>::const_iterator found = easyfind(vec, 3);
+    if (found != vec.end())
+        std::cout << "Found value in vector: " << *found << std::endl;
+    else
+        std::cout << "not found in list" << std::endl;
     std::list<int> lst;
     lst.push_back(10);
     lst.push_back(20);
@@ -37,12 +35,11 @@ int main() {
     lst.push_back(40);
     lst.push_back(50);
 
-    try {
-        int found = easyfind(lst, 30);
-        std::cout << "Found value in list: " << found << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Value not found in list" << std::endl;
-    }
+    std::list<int>::const_iterator found1 = easyfind(lst, 70);
+    if (found1 != lst.end())
+        std::cout << "Found value in list: " << *found1 << std::endl;
+    else
+        std::cout << "not found in list" << std::endl;
 
     return 0;
 }

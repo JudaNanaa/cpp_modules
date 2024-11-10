@@ -17,17 +17,8 @@
 #include <iostream>
 
 template <typename T>
-int easyfind(T &a, int integer) {
-	typename T::iterator it = a.begin();
-	typename T::iterator ite = a.end();
-	while (it != ite) {
-		if (*it == integer) {
-			return *it;
-		}
-		it++;
-	}
-	throw std::exception();
-	return 0;
+typename T::iterator easyfind(T &a, int integer) {
+	return std::find(a.begin(), a.end(), integer);
 }
 
 #endif
