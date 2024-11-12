@@ -12,6 +12,7 @@
 
 #include "PmergeMe.hpp"
 #include <algorithm>
+#include <cmath>
 #include <cstdlib>
 #include <deque>
 #include <vector>
@@ -49,6 +50,10 @@ void PmergeMe::parseArgs(char **argv) {
 		this->list.push_back(atoi(argv[i]));
 	}
 	this->argv = &argv[1];
+}
+
+unsigned int PmergeMe::_findNextJacobSthalNb(unsigned int nb, int index) {
+	return std::pow(2, index) - nb;
 }
 
 void PmergeMe::sort(void) {
@@ -142,11 +147,51 @@ std::vector<int> PmergeMe::sortVector(std::vector<int> &vec) {
 	// else take the bigest of each pair and recall the function
 	biggest = PmergeMe::sortVector(biggest);
 	
-	// insert the smallest of each pair in the new vector
 	std::vector<int>::iterator toInsert;
-	for (it = smallest.begin(), end = smallest.end(); it != end; it++) {
-		toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
-		biggest.insert(toInsert, *it);
+	unsigned int n;
+	unsigned int prevIndex;
+	unsigned int index;
+
+	prevIndex = 0;
+	index = 0;
+	n = 0;
+	it = smallest.begin();
+	toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+	biggest.insert(toInsert, *it);
+	++it;
+	prevIndex = index;
+	index += 1;
+	n = 1;
+	toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+	biggest.insert(toInsert, *it);
+	++it;
+
+	while (true) {
+		prevIndex = index;
+		index = _findNextJacobSthalNb(index, n);
+		n++;
+		if (index >= smallest.size()) {
+			index = smallest.size() - 1;
+			it = smallest.begin() + index;
+			end = smallest.begin() + prevIndex;
+			while (it != end)
+			{
+				toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+				biggest.insert(toInsert, *it);
+				--it;
+			}
+			break;
+		}
+		else {
+			it = smallest.begin() + index;
+			end = smallest.begin() + prevIndex;
+			while (it != end)
+			{
+				toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+				biggest.insert(toInsert, *it);
+				--it;
+			}
+		}
 	}
 	return biggest;
 }
@@ -188,9 +233,50 @@ std::deque<int> PmergeMe::sortDeque(std::deque<int> &vec) {
 	
 	// insert the smallest of each pair in the new deque
 	std::deque<int>::iterator toInsert;
-	for (it = smallest.begin(), end = smallest.end(); it != end; it++) {
-		toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
-		biggest.insert(toInsert, *it);
+	unsigned int n;
+	unsigned int prevIndex;
+	unsigned int index;
+
+	prevIndex = 0;
+	index = 0;
+	n = 0;
+	it = smallest.begin();
+	toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+	biggest.insert(toInsert, *it);
+	++it;
+	prevIndex = index;
+	index += 1;
+	n = 1;
+	toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+	biggest.insert(toInsert, *it);
+	++it;
+
+	while (true) {
+		prevIndex = index;
+		index = _findNextJacobSthalNb(index, n);
+		n++;
+		if (index >= smallest.size()) {
+			index = smallest.size() - 1;
+			it = smallest.begin() + index;
+			end = smallest.begin() + prevIndex;
+			while (it != end)
+			{
+				toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+				biggest.insert(toInsert, *it);
+				--it;
+			}
+			break;
+		}
+		else {
+			it = smallest.begin() + index;
+			end = smallest.begin() + prevIndex;
+			while (it != end)
+			{
+				toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+				biggest.insert(toInsert, *it);
+				--it;
+			}
+		}
 	}
 	return biggest;
 }
@@ -232,9 +318,62 @@ std::list<int> PmergeMe::sortList(std::list<int> &vec) {
 	
 	// insert the smallest of each pair in the new list
 	std::list<int>::iterator toInsert;
-	for (it = smallest.begin(), end = smallest.end(); it != end; it++) {
-		toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
-		biggest.insert(toInsert, *it);
+	unsigned int n;
+	unsigned int prevIndex;
+	unsigned int index;
+
+	prevIndex = 0;
+	index = 0;
+	n = 0;
+	it = smallest.begin();
+	toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+	biggest.insert(toInsert, *it);
+	++it;
+	prevIndex = index;
+	index += 1;
+	n = 1;
+	toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+	biggest.insert(toInsert, *it);
+	++it;
+
+	while (true) {
+		prevIndex = index;
+		index = _findNextJacobSthalNb(index, n);
+		n++;
+		if (index >= smallest.size()) {
+			index = smallest.size() - 1;
+			it = smallest.begin();
+			end = smallest.begin();
+			for (unsigned int i = 0; i < index; i++) {
+				it++;
+			}
+			for (unsigned int i = 0; i < prevIndex; i++) {
+				end++;
+			}
+			while (it != end)
+			{
+				toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+				biggest.insert(toInsert, *it);
+				--it;
+			}
+			break;
+		}
+		else {
+			it = smallest.begin();
+			end = smallest.begin();
+			for (unsigned int i = 0; i < index; i++) {
+				it++;
+			}
+			for (unsigned int i = 0; i < prevIndex; i++) {
+				end++;
+			}
+			while (it != end)
+			{
+				toInsert = std::lower_bound(biggest.begin(), biggest.end(), *it);
+				biggest.insert(toInsert, *it);
+				--it;
+			}
+		}
 	}
 	return biggest;
 }

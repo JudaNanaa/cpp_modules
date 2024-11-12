@@ -32,6 +32,7 @@ class PmergeMe {
 		std::vector<int> sortVector(std::vector<int> &vec);
 		std::deque<int> sortDeque(std::deque<int> &vec);
 		std::list<int> sortList(std::list<int> &vec);
+		unsigned int _findNextJacobSthalNb(unsigned int nb, int index);
 	public:
 		PmergeMe(void);
 		~PmergeMe();
